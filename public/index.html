@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="js/master.js" charset="utf-8"></script>
+    <script src="js/enter.js" charset="utf-8"></script>
+    <title></title>
+  </head>
+  <body onload="Display(), Enters()">
+      <img id="imagemPUC" src="images\pucminaspoços.png" width="150px">
+      <div class="login">
+        <!--eu não quero usar form -->
+        <!--mock-up de login-->
+
+          <img id="imagemMed" src="images\simbolo-de-medicina-5.png" width="200px">
+
+          <section class="">
+            <div class="criarsome">
+              <input type="submit" class="inputTitle" value="Usuário"disabled>
+              <input type="text" name="username" id="usernameField" value="" placeholder="Usuário" class="inputForm"><br>
+              <input type="submit" class="inputTitle" value="Senha"disabled>
+              <input type="password" name="senha" id="passwordField" value="" placeholder="Senha" class="inputForm"><br>
+              <input class="BTN" type="submit" onclick="sign_in()" id="signIn" value="Entrar"/>
+              <input class="BTN" type="submit" onclick="sing_up()" id="singUp" value="Criar conta"/>
+            </div>
+            <div class="criarctn">
+              <input type="submit" class="inputTitle" value="Digite um usuario"disabled>
+              <input type="text" name="username" id="newusernameField" value="" placeholder="Usuário" class="inputForm"><br>
+              <input type="submit" class="inputTitle"  value="Senha"disabled>
+              <input type="password" name="senha" id="newpasswordField" value="" placeholder="Senha" class="inputForm"><br>
+              <div class="erro" style="display: none;">
+                <p style="color: red">É necessário preencher todos os campos para cadastrar.</p>
+              </div>
+              <input class="BTN" type="submit" onclick="Finalizar()" id="finalizar" value="Finalizar"/>
+              <input class="BTN" type="submit" onclick="Voltar()" id="voltar" value="Voltar"/>
+            </div>
+          </section>
+
+      </div>
+      <div class="FichaMedica">
+        <div class="SRCH">
+          <input type="number" class="inputForm" id="ID" placeholder="ID">
+          <input type="submit" id="srchBtn" type="search" onclick="Pesquisar()" value="🔍">
+          <div style="color: white" id="resultado">
+
+          </div>
+          <input class="BTN" type="submit" onclick="Edit()" id="editBtn" value="Editar ✎">
+          <input class="BTN" type="submit" onclick="ADDprontuario()" id="gravarBtn" value="GRAVAR PRONTUARIO">
+          <input class="BTN" type="submit" onclick="Showprontuario()" id="mostrarBtn" value="Prontuarios">
+
+        </div>
+
+
+      <div class="ficha">
+        <div class="Field">
+          <h1 style="text-align: center;">  <img id="imagemMed" src="images\simbolo-de-medicina-5.png" width="65px">Ficha Médica</h1>
+          <input type="submit" name="" value=" Nome " disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="nome">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Idade" disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="idade">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Sexo" disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="sexo">
+          <br>
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="CPF" disabled class="inputTitle">
+          <input class="inputForm" type="tel"    id="cpf">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Telefone" disabled class="inputTitle" id="tel1">
+          <input class="inputForm" type="tel"    id="tel">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Altura" disabled class="inputTitle">
+          <input class="inputForm" type="number"  id="altura">
+          <br>
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Massa" disabled class="inputTitle">
+          <input class="inputForm" type="number"  id="massa">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Tipo Sanguíneo" disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="sangue">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Etnia" disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="etnia">
+          <br>
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Alergias" disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="alergia">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Histórico Familiar" disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="historico">
+        </div>
+
+        <div class="Field">
+          <input type="submit" name="" value="Doenças" disabled class="inputTitle">
+          <input class="inputForm" type="text"    id="doenca">
+          <br>
+        </div>
+
+        <input class="BTN" type="submit" onclick="Cadastro(); Lista()" id="cadastroBtn" value="Cadastrar"/>
+        <input class="BTN" type="submit" onclick="gerarCadastro()" value="Gerar Cadastro" id="gerarCadastro">
+        <input class="BTN" type="submit" onclick="Confirm(); Lista()" id="confirmBtn" value="Confirmar">
+        <input class="BTN" type="submit" onclick="Logout()" id="logoutBtn" value="Logout">
+
+        <br>
+        <div class="pronts">
+
+        </div>
+        <table>
+          <tr style="color: white" id="lista">
+          </tr>
+        </table>
+        <br>
+
+
+      </div>
+      </div>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
